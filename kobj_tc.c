@@ -9,7 +9,7 @@
 static void kobj_tc(void)
 {
     p_obj_t     p_obj_t_value;     /**<  8bit integer type */
-    p_err_t     err;
+    int         err;
 
     err = P_EOK     ;
     err = P_ERROR   ;
@@ -70,6 +70,11 @@ static void klist_tc(void)
     {
         P_TC_FAIL();
     }
+    P_TC_PASS();
+}
+
+static void kobj_api_tc(void)
+{
     P_TC_PASS();
 }
 

@@ -8,7 +8,7 @@
 
 static void kapi_err_tc(void)
 {
-    p_err_t err;
+    int err;
     const char *errstr;
     
     p_set_errno(P_EBUSY);
@@ -43,7 +43,7 @@ static void kapi_thread_tc(void)
 {
     p_thread_attr_t attr;
     p_thread_getattr(p_thread_self(), &attr);
-    t1 = p_thread_create("t1", k_tc_entry, NULL, 512, attr.priority + 1, 12);
+    t1 = p_thread_create("t1", k_tc_entry, NULL, 512, attr.priority + 1);
     if (!t1)
     {
         P_TC_LOG("err is %s", p_errno_str(p_get_errno()));
